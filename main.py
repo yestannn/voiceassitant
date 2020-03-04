@@ -1,4 +1,4 @@
-import  speech_recognition as sr  
+  import  speech_recognition as sr  
 import playsound # to play saved mp3  
 from gtts import gTTS # google text to speech 
 from selenium import webdriver
@@ -52,12 +52,12 @@ def text_search(text):
 	elif "what can you do" in text.lower() :
 		assistant_speaks("I can open you Chrome talk with, search in internet")
 		return
-	elif "stop" in text.lower() or "bye" in text.lower() or "see you later" in text.lower():
-		assistant_speaks("See you later")
-		return
+	
 	elif "how are you " in text.lower() or "how you doing" in text.lower() :
 		assistant_speaks("I'm fine")
 		return
+
+	
 
 	elif  "who made you" in text.lower() or "who created you" in text.lower() :
 		assistant_speaks("I was created by Astana IT University Students")
@@ -122,6 +122,9 @@ if __name__ == "__main__":
 		
 		if text == 0:
 			assistant_speaks("please, repeat")
+		elif "stop" in text.lower() or "bye" in text.lower() or "see you later" in text.lower():
+			assistant_speaks("See you later")
+			break
 		else:
 			text_search(text)
 
